@@ -37,12 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="FastReport, Version=2020.3.4.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
-      <HintPath>..\packages\FastReport.OpenSource.2020.3.4\lib\net40\FastReport.dll</HintPath>
-    </Reference>
-    <Reference Include="FastReport.Compat, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e, processorArchitecture=MSIL">
-      <HintPath>..\packages\FastReport.Compat.2020.3.2\lib\net40\FastReport.Compat.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -116,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\FastReport.OpenSource\FastReport.OpenSource.csproj">
+      <Project>{62667265-5e09-444d-8218-244de84804a7}</Project>
+      <Name>FastReport.OpenSource</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

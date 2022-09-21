@@ -42,6 +42,7 @@
             this.toolStripZoomOut = new System.Windows.Forms.ToolStripButton();
             this.ReportsList = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripPagesCount = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,10 +50,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(808, 644);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -63,6 +64,7 @@
             this.toolStripFirstBtn,
             this.toolStripPrewBtn,
             this.toolStripPageNum,
+            this.toolStripPagesCount,
             this.toolStripNextBtn,
             this.toolStripLastBtn,
             this.toolStripZoomIn,
@@ -70,7 +72,7 @@
             this.toolStripZoomOut});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1054, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1070, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -106,6 +108,7 @@
             // 
             // toolStripPageNum
             // 
+            this.toolStripPageNum.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripPageNum.Name = "toolStripPageNum";
             this.toolStripPageNum.Size = new System.Drawing.Size(30, 25);
             this.toolStripPageNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripPageNum_KeyDown);
@@ -166,28 +169,38 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.AutoScroll = true;
+            this.panel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(229, 25);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(223, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(814, 650);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(847, 650);
             this.panel1.TabIndex = 4;
+            // 
+            // toolStripPagesCount
+            // 
+            this.toolStripPagesCount.Name = "toolStripPagesCount";
+            this.toolStripPagesCount.Size = new System.Drawing.Size(50, 22);
+            this.toolStripPagesCount.Text = "/ PageN";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 675);
+            this.ClientSize = new System.Drawing.Size(1070, 675);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ReportsList);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Report viewer";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +220,7 @@
         private System.Windows.Forms.ToolStripButton toolStripZoomIn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripZoomOut;
+        private System.Windows.Forms.ToolStripLabel toolStripPagesCount;
     }
 }
 

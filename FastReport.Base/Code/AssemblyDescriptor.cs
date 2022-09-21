@@ -194,8 +194,8 @@ namespace FastReport.Code
 #endif
 
             // these two required for "dynamic" type support
-            AddReferencedAssembly(assemblies, defaultPath, "System.Core");
-            AddReferencedAssembly(assemblies, defaultPath, "Microsoft.CSharp");
+            AddReferencedAssembly(assemblies, defaultPath, "System.Core.dll");
+            AddReferencedAssembly(assemblies, defaultPath, "Microsoft.CSharp.dll");
         }
 
         private void AddReferencedAssembly(IList assemblies, string defaultPath, string assemblyName)

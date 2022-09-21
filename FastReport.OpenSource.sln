@@ -45,6 +45,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastReport.OpenSource.Data.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastReport.OpenSource.Data.Firebird", "Extras\Core\FastReport.Data\FastReport.Data.Firebird\FastReport.OpenSource.Data.Firebird.csproj", "{2DB7A38A-4E08-4411-8AE0-D85DED02C2DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsOpenSource", "Demos\OpenSource\WinFormsOpenSourceViewer\WinFormsOpenSource\WinFormsOpenSource.csproj", "{B98F7D90-37F1-4BC8-A7E2-48922FB67452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSourceCustomViewer", "Demos\OpenSource\WPFOpenSourceViewer\OpenSourceCustomViewer\OpenSourceCustomViewer.csproj", "{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Academic|Any CPU = Academic|Any CPU
@@ -234,6 +238,26 @@ Global
 		{2DB7A38A-4E08-4411-8AE0-D85DED02C2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2DB7A38A-4E08-4411-8AE0-D85DED02C2DE}.WinForms|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DB7A38A-4E08-4411-8AE0-D85DED02C2DE}.WinForms|Any CPU.Build.0 = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Academic|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Academic|Any CPU.Build.0 = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Demo|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Demo|Any CPU.Build.0 = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.WinForms|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452}.WinForms|Any CPU.Build.0 = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Academic|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Academic|Any CPU.Build.0 = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Demo|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Demo|Any CPU.Build.0 = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.WinForms|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44}.WinForms|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -255,6 +279,8 @@ Global
 		{01DA6786-77D4-4457-BF33-E204F0C9E155} = {CCF32DAC-85D9-43D4-A4A7-72626A13D806}
 		{BDB7D5CB-8DD2-48DB-BA81-FDDC88135B35} = {898AF8DC-11C3-4640-B60C-5D8CBF2F29CF}
 		{2DB7A38A-4E08-4411-8AE0-D85DED02C2DE} = {898AF8DC-11C3-4640-B60C-5D8CBF2F29CF}
+		{B98F7D90-37F1-4BC8-A7E2-48922FB67452} = {8E9E75EB-2ABC-4CC1-8AA0-C11DEE54A152}
+		{F2A6F357-5B4F-4F0F-B920-39EACAC25C44} = {8E9E75EB-2ABC-4CC1-8AA0-C11DEE54A152}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DFBB1F5B-F03E-4BCB-AFEE-A45A2C4D5BB8}

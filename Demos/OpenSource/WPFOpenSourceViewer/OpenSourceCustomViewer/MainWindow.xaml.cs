@@ -9,6 +9,7 @@ using System.IO;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
 using FastReport.Export.Image;
+using System.Data;
 
 namespace OpenSourceCustomViewer
 {
@@ -22,6 +23,7 @@ namespace OpenSourceCustomViewer
             InitializeComponent();
             imHeight = im.Height;
             imWidth = im.Width;
+            data.ReadXml(reportsPath + "nwind.xml");
         }
 
         public List<BitmapImage> pages = new List<BitmapImage>();
@@ -48,10 +50,11 @@ namespace OpenSourceCustomViewer
 
         public int CurrentPage
         {
-            get { return currentPage;  }
-            set {
+            get { return currentPage; }
+            set
+            {
                 if (value >= 0 && value < pages.Count())
-                currentPage = value;
+                    currentPage = value;
             }
         }
         public bool HasMultipleFiles
@@ -79,7 +82,7 @@ namespace OpenSourceCustomViewer
                 image.CacheOption = BitmapCacheOption.OnLoad;
                 image.UriSource = new Uri(file);
                 image.EndInit();
-                pages.Add(image);                    
+                pages.Add(image);
             }
             CurrentPage = 0;
         }
@@ -95,26 +98,47 @@ namespace OpenSourceCustomViewer
             pages.Clear();
             foreach (FileInfo file in path)
             {
-                 File.Delete(file.FullName);
-            }
-         }
-
-        void OpenReportFile()
-        {
-            OpenFileDialog myDialog = new OpenFileDialog();
-            myDialog.Filter = "Подготовленные отчёты(*.FPX)|*.fpx;";
-            myDialog.CheckFileExists = true;
-            myDialog.Multiselect = false;
-            if (myDialog.ShowDialog() == true)
-            {
-                LoadReport(myDialog.FileName);
+                File.Delete(file.FullName);
             }
         }
 
-        void LoadReport(string report_name)
+        void OpenReportFile()
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Report file (*.frx)|*.frx|Prapared report (*.fpx)|*.fpx";
+            dialog.CheckFileExists = true;
+            dialog.Multiselect = false;
+            if (dialog.ShowDialog() == true)
+            {
+                switch (dialog.FilterIndex)
+                {
+                    case 1:
+                        LoadReport(dialog.FileName);
+                        break;
+
+                    case 2:
+                        LoadPreparedReport(dialog.FileName);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+
+        void LoadReport(string fileName)
         {
             Report rep = new Report();
-            rep.LoadPrepared(report_name);
+            rep.Load(fileName);
+            rep.RegisterData(data, "NorthWind");
+            rep.Prepare();
+            Report = rep;
+        }
+
+        void LoadPreparedReport(string fileName)
+        {
+            Report rep = new Report();
+            rep.LoadPrepared(fileName);
             Report = rep;
         }
 
@@ -124,6 +148,9 @@ namespace OpenSourceCustomViewer
         private int currentPage = 0;
         private double imHeight;
         private double imWidth;
+        private DataSet data = new DataSet();
+        public string reportsPath = FastReport.Utils.Config.ApplicationFolder + @"..\..\..\..\..\Reports\";
+
 
         private void Zoom_in_Click(object sender, RoutedEventArgs e)
         {
